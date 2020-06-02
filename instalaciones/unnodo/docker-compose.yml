@@ -8,4 +8,9 @@ services:
           - 9300:9300
         environment:
           - discovery.type=single-node
+        volumes:
+          - /home/ubuntu/environment/datos/nodo1:/usr/share/elasticsearch/data
+       
+
+
 
