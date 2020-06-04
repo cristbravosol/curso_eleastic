@@ -1,0 +1,64 @@
+# PUT POST GET DELETE HEAD
+# PUT: Añadir algo servidor
+# POST: Actualizar algo en el servidor
+# GET: Recuperar informacion del servidor
+# DELETE: Borrar algo
+# HEAD: Si algo existe en el servidor
+
+# Crear un indice
+PUT /miindice
+
+# Saber si el indice existe
+HEAD /miindice
+
+# Settings del indice
+GET /miindice/_settings
+
+# Modificar setting del indice
+PUT /miindice/_settings
+{
+  "index":{
+    "number_of_replicas": 3
+  }
+}
+
+# Borrar el indice
+DELETE /miindice
+
+PUT /miindice2
+{
+  "settings":{
+    "index":{
+      "number_of_shards": 8,
+       "number_of_replicas": 2
+    }
+  }
+}
+
+# Insertar documentos
+POST /miindice2/_doc
+{
+  "nombre":"Ivan",
+  "apellido":"Osuna",
+  "edad": 42
+}
+
+
+# Insertar documentos
+POST /miindice2/_doc/1
+{
+  "nombre":"Cristian",
+  "apellido":"Bravo",
+  "edad": 23
+}
+
+GET /miindice2/_doc/1
+
+GET /miindice2/_search?q=nombre_completo:Ivan Osuna (3)
+
+
+GET /miindice2/_mapping
+
+
+
+

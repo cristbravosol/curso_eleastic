@@ -1,0 +1,44 @@
+PROCESO DE INDEXACION
+Doc3:   "text" : "En la Mancha, llueve mucho"
+1º Se mira el mapping -> Obtiene el analizador adecuado (desarrollador): XX
+2º Analizador XX -> Lo aplico:
+   - Terminos y posiciones
+        - en 1
+        - la 2
+        - mancha 3
+        - llueve 4
+        - mucho 5
+3º Se añaden los términos nuevos
+4º Se actualiza la estructura de indexación
+5º Opcionalmente , se guarda el texto original
+   
+   
+   
+Indice: Coleccion de shard
+Shard: Coleccion de Terminos y estructuras de búsqueda: Lucene
+Terminos: en, un, lugar, de la, mancha, mucho, llueve
+Estructuras de búsqueda:
+-en: Doc 1, palabra 37, Doc3 palabra 1
+-mancha: 
+  Doc 1, palabra 40
+  Doc 2, palabra 57
+  Doc 3 palabra 3
+- llueve:
+  Doc 3, palabra 4
+OPCIONAL???
+- Doc1: source (En un lugar -,:de (la) Mancha...)
+- Doc2: source
+- Doc3: source(En la Mancha, llueve mucho)
+
+
+# NGram Filter
+APQRS9uu43
+   APQR
+   PQRS
+   QRS9
+   RS9u
+   S9uu
+   9uu4
+   uu43
+77
+J45
