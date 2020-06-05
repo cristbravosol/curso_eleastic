@@ -496,7 +496,7 @@ services:
     networks:
       - frontnet
     volumes:
-      - /home/ubuntu/environment/datos/certs/kibana:/etc/kibana/config/certs/own
+      - /home/ubuntu/environment/datos/certs/kibana:/etc/kibana/config/certs/kibana
       - /home/ubuntu/environment/datos/certs/ca:/etc/kibana/config/certs/ca
     environment:
       ELASTICSEARCH_HOSTS: "https://coordinador1:9200"
